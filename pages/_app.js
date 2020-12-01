@@ -10,8 +10,7 @@ import 'prismjs/plugins/autoloader/prism-autoloader'
 import 'prismjs/plugins/toolbar/prism-toolbar'
 import 'prismjs/plugins/toolbar/prism-toolbar.css'
 import 'prismjs/themes/prism-okaidia.css'
-
-import App from 'next/App'
+//import App from 'next/App'
 import PropTypes from 'prop-types'
 import Head from 'next/head'
 
