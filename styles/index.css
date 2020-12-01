@@ -12,8 +12,13 @@ body {
 }
 
 /* Write your own custom component styles here */
-.btn-blue {
-  @apply px-4 py-2 font-bold text-white bg-blue-500 rounded;
+@layer components {
+  .btn-blue {
+    @apply py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+  }
+  .btn-outline {
+    @apply inline-flex items-start text-lg leading-6 font-medium text-teal-400 hover:text-teal-300 transition ease-in-out duration-150;
+  }
 }
 
 /* Start purging... */
@@ -21,3 +26,11 @@ body {
 /* Stop purging. */
 
 /* Your own custom utilities */
+.hover\:text-teal-300:hover {
+  --tw-text-opacity: 1;
+  color: rgba(103, 232, 249, var(--tw-text-opacity))
+}
+.text-teal-400 {
+  --tw-text-opacity: 1;
+  color: rgba(34, 211, 238, var(--tw-text-opacity))
+}
