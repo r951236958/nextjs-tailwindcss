@@ -34,3 +34,15 @@ body {
   --tw-text-opacity: 1;
   color: rgba(34, 211, 238, var(--tw-text-opacity))
 }
+
+.bg-bk {
+  background-color:  #303030;
+}
+
+.bg-papaer {
+  background-color: #424242;
+}
+
+a > i.material-icons {
+  vertical-align: middle;
+}
