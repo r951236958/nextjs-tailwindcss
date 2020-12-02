@@ -1,4 +1,4 @@
-import Nav from '../components/nav'
+import TopBar from '../components/TopBar'
 import Hero from '../components/Hero'
 
 export const CodeZone = () => (
@@ -43,7 +43,7 @@ a:hover {
 export default function about() {
   return (
     <div>
-      <Nav />
+      <TopBar />
       <div className="py-20">
         <h1 className="text-5xl text-center text-gray-700 dark:text-gray-100">
           About Page
