@@ -1,11 +1,28 @@
-import Nav from '../components/nav'
-import Hero from '../components/Hero'
+//import Nav from '../components/nav'
 import Link from 'next/link'
+import Button from '../components/Button'
+import Hero from '../components/Hero'
+import TopNav from '../components/TopNav'
+
+const links = [
+  {
+    home: {
+    href: '/',
+    primary: 'Home',
+    },
+  },
+  {
+    about: {
+      href: '/about',
+      primary: 'About',
+    }
+  }
+]
 
 export default function IndexPage() {
   return (
     <div>
-      <Nav />
+      <TopNav />
       <div className="py-20">
         <h1 className="text-5xl text-center text-gray-700 dark:text-gray-100">
           Next.js + Tailwind CSS 2.0
@@ -19,6 +36,9 @@ export default function IndexPage() {
                 </a>
               </Link>
             </div>
+          </div>
+          <div className="m-5 text-center">
+            <Button href="/" primary="Home" />
           </div>
         </div>
       </div>
