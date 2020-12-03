@@ -43,6 +43,7 @@ body {
   background-color: #424242;
 }
 
-a > i.material-icons {
+a > i.material-icons,
+button > i.material-icons {
   vertical-align: middle;
 }
