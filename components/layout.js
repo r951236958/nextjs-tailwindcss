@@ -1,19 +1,24 @@
-import Head from 'next/head';
-import Footer from '../components/footer';
-import Header from '../components/header';
+import Head from 'next/head'
+import Footer from './footer'
+//import Simple from './simple'
+//import Hero from './Hero'
+import Header from './header'
+//import TopBar from './TopBar'
 
 const Layout = ({ children }) => (
-  <div>
-    <Head>
-      <title>Next Auth App</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+  <>
+    <div className="rounded-md bg-paper bg-opacity-20">
+      <Head>
+        <title>Next Auth App</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-    <Header />
+      <Header />
 
-    <main className="container">{children}</main>
-    <Footer/>
-  </div>
-);
+      <main className="container">{children}</main>
+      <Footer />
+    </div>
+  </>
+)
 
-export default Layout;
+export default Layout

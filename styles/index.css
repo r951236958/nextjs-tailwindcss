@@ -8,7 +8,7 @@
 
 html,
 body {
-  @apply bg-gray-50 dark:bg-gray-900;
+  @apply dark:bg-gray-800 dark:text-white;
 }
 
 /* Write your own custom component styles here */
@@ -18,6 +18,15 @@ body {
   }
   .btn-outline {
     @apply inline-flex items-start text-lg leading-6 font-medium text-teal-400 hover:text-teal-300 transition ease-in-out duration-150;
+  }
+  .btn-info {
+    @apply h-10 px-5 m-2 text-blue-100 transition-colors duration-150 bg-blue-600 rounded-lg focus:outline-white hover:bg-blue-700;
+  }
+  .btn-dark {
+    @apply h-10 px-5 m-2 text-gray-100 transition-colors duration-150 bg-gray-700 rounded-lg focus:outline-white hover:bg-gray-800;
+  }
+  .btn-info-outline {
+    @apply h-10 px-5 text-blue-100 transition-colors duration-150 border border-blue-600 rounded-lg focus:outline-black hover:bg-blue-500 hover:text-blue-100;
   }
 }
 
@@ -31,8 +40,10 @@ body {
   padding: 0 1rem 1rem 1rem;
   max-width: 680px;
   margin: 0 auto;
-  background: #fff;
-  color: #333;
+}
+.mobile-wrap {
+  width: 336px;
+  height: 720px;
 }
 
 li,
