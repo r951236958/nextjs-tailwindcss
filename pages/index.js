@@ -1,35 +1,13 @@
-//import Nav from '../components/nav'
-//import Link from 'next/link'
-//import Button from '../components/Button'
-//import Hero from '../components/Hero'
-//import TopBar from '../components/TopBar'
-import MobileNavigation from '../components/MobileNavigation'
-//import SideBar from '../components/SideBar'
+import Layout from '../components/layout'
 
-const links = [
-  {
-    home: {
-      href: '/',
-      primary: 'Home',
-    },
-  },
-  {
-    about: {
-      href: '/about',
-      primary: 'About',
-    },
-  },
-]
-
-export default function IndexPage() {
-
+export default function Page () {
   return (
-    <>
-    <MobileNavigation />
-    </>
+    <Layout>
+    <h1 className="text-white text-2xl">NextAuth.js Example</h1>
+
+      <p className="text-white my-4">
+        This is an example site to demonstrate how to use <a className="text-gold hover:text-yellow-200 hover:underline text-xl" href={`https://next-auth.js.org`}>NextAuth.js</a> for authentication.
+      </p>
+    </Layout>
   )
 }
-  
-
-
-
