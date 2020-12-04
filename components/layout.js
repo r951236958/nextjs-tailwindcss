@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Footer from './footer'
 //import Simple from './simple'
 //import Hero from './Hero'
-import Header from './header'
+import TopHeader from './topheader'
 //import TopBar from './TopBar'
 
 const Layout = ({ children }) => (
@@ -13,9 +13,9 @@ const Layout = ({ children }) => (
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
+      <TopHeader />
 
-      <main className="container">{children}</main>
+      <main className="container min-h-full max-h-screen">{children}</main>
       <Footer />
     </div>
   </>
