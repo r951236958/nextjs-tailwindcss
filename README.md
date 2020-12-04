@@ -28,4 +28,19 @@ This example is a basic starting point for using [Tailwind CSS](https://tailwind
 
 To control the generated stylesheet's filesize, this example uses Tailwind CSS' [`purge` option](https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css) to remove unused CSS.
 
-### 哈哈哈哈
+### Next.js教學
+
+- [AUTH0 - 建立Next.js Layout and Pages][1]
+- [使用NextAuth身份驗證][2]
+- [next-auth-example][5]
+
+### 其他參考網站
+
+- [NextAuth][3]
+- [tailwindcss][4]
+
+[1]: https://auth0.com/blog/next-js-practical-introduction-for-react-developers-part-1/
+[2]: https://medium.com/technest/next-js-oauth-with-nextauth-js-53a9f2b9994f
+[3]: https://next-auth.js.org/ "NextAuth"
+[4]: https://tailwindcss.com/
+[5]: https://github.com/nextauthjs/next-auth-example

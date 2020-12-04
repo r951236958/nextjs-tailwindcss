@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Footer from './footer'
 //import Simple from './simple'
 //import Hero from './Hero'
-import TopHeader from './topheader'
+import Header from './header'
 //import TopBar from './TopBar'
 
 const Layout = ({ children }) => (
@@ -13,7 +13,7 @@ const Layout = ({ children }) => (
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <TopHeader />
+      <Header />
 
       <main className="container min-h-full max-h-screen">{children}</main>
       <Footer />
