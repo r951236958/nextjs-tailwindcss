@@ -27,17 +27,12 @@ class TopBar extends React.Component {
   constructor() {
     super()
 
-    this.setOpen = this.setOpen.bind(this)
-    this.menuClose = this.menuClose.bind(this)
     this.state = {
       setOpen: false,
     }
 
-    this.handleClick = this.handleClick.bind(this)
-    this.handleOutsideClick = this.handleOutsideClick.bind(this)
-    this.state = {
-      popupVisible: false,
-    }
+    this.setOpen = this.setOpen.bind(this)
+    this.menuClose = this.menuClose.bind(this)
   }
 
   setOpen(event) {
@@ -55,29 +50,6 @@ class TopBar extends React.Component {
       })
     }
   }
-
-  handleClick() {
-    if (!this.state.popupVisible) {
-      // attach/remove event handler
-      document.addEventListener('click', this.handleOutsideClick, false)
-    } else {
-      document.removeEventListener('click', this.handleOutsideClick, false)
-    }
-
-    this.setState((prevState) => ({
-      popupVisible: !prevState.popupVisible,
-    }))
-  }
-
-  handleOutsideClick(e) {
-    // ignore clicks on the component itself
-    if (this.node.contains(e.target)) {
-      return
-    }
-
-    this.handleClick()
-  }
-
   render() {
     return (
       <nav className="bg-gray-800">
@@ -187,57 +159,57 @@ class TopBar extends React.Component {
             {/* Menu Button */}
             <div className="-mr-2 flex md:hidden">
               {/* Mobile menu button */}
-              <div
-                className="popover-container"
-                ref={(node) => {
-                  this.node = node
-                }}
-              >
-                <button
-                  className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-                  onClick={this.handleClick}
+              <button className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                <span className="sr-only">Open main menu</span>
+                {/*
+        Heroicon name: menu
+
+        Menu open: "hidden", Menu closed: "block"
+      */}
+                <svg
+                  className="block h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
                 >
-                  <span className="sr-only">Open main menu</span>
-                  <i className="material-icons">menu</i>
-                </button>
-                {this.state.popupVisible && (
-                  <div className="mobileMenu popover origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5">
-                    {links.map(({ href, primary }) => (
-                      <a
-                        href={href}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        role="menuitem"
-                      >
-                        {primary}
-                      </a>
-                    ))}
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      role="menuitem"
-                    >
-                      Your Profile
-                    </a>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      role="menuitem"
-                    >
-                      Settings
-                    </a>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      role="menuitem"
-                    >
-                      Sign out
-                    </a>
-                  </div>
-                )}
-              </div>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+                {/*
+        Heroicon name: x
+
+        Menu open: "block", Menu closed: "hidden"
+      */}
+                <svg
+                  className="hidden h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
+        {/*
+Mobile menu, toggle classes based on menu state.
+
+Open: "block", closed: "hidden"
+    */}
       </nav>
     )
   }

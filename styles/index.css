@@ -48,12 +48,33 @@ button.mdl-button--raised.mdl-button--colored:hover {
   background: #1F2937;
 }
 
+button.mdl-button--primary.mdl-button--primary {
+  color: #26a69a;
+  background: #efefef;
+}
+
+button.mdl-button--primary.mdl-button--primary:hover {
+  color: #efefef;
+  background: #00766c;
+}
+
+[type='text']:focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, textarea:focus, select:focus {
+  @apply ring-1 ring-gray-400 ring-opacity-50 ring-offset-2 ring-offset-gray-700;
+}
+
+.firebaseauth {
+  z-index: 30;
+}
+
+.mobileMenu {
+  z-index: 50;
+}
+
 /* Your own custom utilities */
 body {
   font-family: -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   padding: 0 1rem 1rem 1rem;
-  max-width: 680px;
-  margin: 0 auto;
+   @apply max-w-screen-xl my-0 mx-auto;
 }
 .mobile-wrap {
   width: 336px;
@@ -100,7 +121,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 42rem;
+  /*max-width: 42rem;*/
   margin: 0 auto;
   padding: 0.2rem 1.25rem;
 }
