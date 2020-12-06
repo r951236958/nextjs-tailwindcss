@@ -1,0 +1,92 @@
+:root {
+    --color-primary: #37474f;
+    --color-secondary: #26c6da;
+    --mdc-theme-primary: #37474f;
+    --mdc-theme-secondary: #26c6da;
+  }
+  
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply bg-gray-900 dark:text-white;
+}
+
+.btn-blue {
+    @apply py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+  }
+
+  .btn-outline {
+    @apply  px-3 py-2 rounded-lg border border-teal-400 text-lg leading-6 font-medium text-gray-300 hover:text-gray-100 hover:bg-gray-800 transition ease-in-out duration-150;
+  }
+  
+  .btn-info {
+    @apply px-3 py-2 m-2 text-blue-100 transition-colors duration-150 bg-blue-600 rounded-lg focus:outline-white hover:bg-blue-700;
+  }
+  
+  .btn-dark {
+    @apply px-3 py-2 m-2 text-gray-200 transition-colors duration-150 bg-gray-700 border border-gray-400 rounded-lg focus:outline-white hover:bg-gray-800 hover:border-gray-600 hover:text-gray-100;
+  }
+  
+  .btn-info-outline {
+    @apply px-3 py-2 text-blue-100 transition-colors duration-150 border border-blue-600 rounded-lg focus:outline-black hover:bg-blue-500 hover:text-blue-100;
+  }
+  
+  button.mdl-button--raised.mdl-button--colored {
+    background: #4B5563;
+    color: #efefef;
+  }
+  
+  button.mdl-button--raised.mdl-button--colored:hover {
+    background: #1F2937;
+  }
+  
+  button.mdl-button--primary.mdl-button--primary {
+    color: #26a69a;
+    background: #efefef;
+  }
+  
+  button.mdl-button--primary.mdl-button--primary:hover {
+    color: #efefef;
+    background: #00766c;
+  }
+
+  .firebaseauth {
+    z-index: 30;
+  }
+  
+  .mobileMenu {
+    z-index: 50;
+  }
+
+  .mobile-wrap {
+    width: 336px;
+    height: 720px;
+  }
+
+  button.mdc-button--outlined {
+    @apply ring-1 ring-gray-400 focus:ring-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white;
+  }
+  
+  button.mdc-button--outlined .mdc-button__label {
+    @apply text-gray-400;
+  }
+  
+  button.mdc-button--outlined:hover .mdc-button__label {
+    @apply text-yellow-400;
+  }
+  
+  button.mdc-button--outlined:hover {
+    @apply ring-2 ring-yellow-400;
+  }
+  
+  .mdc-menu-anchor {
+    @apply absolute origin-top-right right-0 pr-8 z-50;
+  }
+  
+  .mdc-simple-menu {
+    @apply mt-2 w-64 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5;
+  }
+  

@@ -1,3 +1,4 @@
+import React from 'react'
 import Layout from '../components/layout'
 import useSWR from 'swr'
 import Link from 'next/link'
@@ -10,7 +11,7 @@ const fetcher = (url, token) =>
     credentials: 'same-origin',
   }).then((res) => res.json())
 
-export default function Page() {
+export default function Index() {
   const { user, logout } = useUser()
   const { data, error } = useSWR(
     user ? ['/api/getFood', user.token] : null,
@@ -31,12 +32,13 @@ export default function Page() {
   }
   return (
     <Layout>
-      <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 border-4 border-dashed border-gray-200 rounded-lg">
-        <div className="my-4 mx-auto  h-96">
-          <h1 className="text-white text-3xl">
-            Firebase authentication with a serverless API
-          </h1>
-
+      <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <div className="my-4 mx-auto h-96">
+          <div className="py-10">
+            <h1 className="text-white text-3xl">
+              Firebase authentication with a serverless API
+            </h1>
+          </div>
           <p className="text-white my-4">
             Go to{' '}
             <a
@@ -48,6 +50,7 @@ export default function Page() {
             how to use.
           </p>
         </div>
+
         <div>
           <div className="my-4">
             <p className="flex items-start text-white my-4">

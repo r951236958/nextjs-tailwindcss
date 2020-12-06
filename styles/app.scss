@@ -1,0 +1,13 @@
+// Import global Material Theming variables
+@import "my-theme";
+
+// Imports the Styles for each Material Component
+@import "@material/theme";
+
+.mdc-button {
+    --mdc-theme-primary: #37474f;
+    --mdc-theme-secondary: #26c6da;
+}
+// $mdc-theme-surface: #ffffff;
+$mdc-theme-background: #424242;
+// $mdc-theme-error: #b00020;

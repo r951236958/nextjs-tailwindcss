@@ -1,5 +1,9 @@
-import TopBar from '../components/TopBar'
+import Layout from '../components/layout'
 import Hero from '../components/Hero'
+import Prism from 'prismjs'
+
+// The code snippet you want to highlight, as a string
+//const code = `var data = 1;`;
 
 export const CodeZone = () => (
   <div className="my-6 rounded-xl overflow-hidden bg-gray-800">
@@ -13,7 +17,7 @@ export const CodeZone = () => (
   </div>
 )
 
-const codeSimple = `<pre><code class="language-pug" data-dependencies="less">
+const htmlCode = `<pre><code class="language-pug" data-dependencies="less">
 :less
 	foo {
 		color: @red;
@@ -41,10 +45,13 @@ a:hover {
 `
 
 export default function about() {
+  React.useEffect(() => {
+    Prism.highlightAll()
+  }, [])
+
   return (
-    <div>
-      <TopBar />
-      <div className="py-20">
+    <Layout>
+      <div className="py-10">
         <h1 className="text-5xl text-center text-gray-700 dark:text-gray-100">
           About Page
         </h1>
@@ -58,17 +65,10 @@ export default function about() {
       <div className="my-10">
         <div className="mx-auto py-16 px-4">
           <pre>
-            <code className="language-html">{codeSimple}</code>
+            <code className="language-html">{htmlCode}</code>
           </pre>
         </div>
       </div>
-      <div className="my-10">
-        <div className="mx-auto py-16 px-4">
-          <pre>
-            <code className="language-markdown">{markdownCode}</code>
-          </pre>
-        </div>
-      </div>
-    </div>
+    </Layout>
   )
 }

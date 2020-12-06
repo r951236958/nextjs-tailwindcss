@@ -738,6 +738,12 @@ module.exports = {
     }),
     maxWidth: (theme, { breakpoints }) => ({
       none: 'none',
+      '1/4': '25%',
+      25: '25%',
+      '1/2': '50%',
+      50: '50%',
+      '3/4': '75%',
+      75: '75%',
       0: '0rem',
       xs: '20rem',
       sm: '24rem',
@@ -1025,6 +1031,7 @@ module.exports = {
     'disabled',
   ],
   variants: {
+    ringColor: ['hover', 'active'],
     accessibility: ['responsive', 'focus-within', 'focus'],
     alignContent: ['responsive'],
     alignItems: ['responsive'],

@@ -1,3 +1,10 @@
+:root {
+  --color-primary: #37474f;
+  --color-secondary: #26c6da;
+  --mdc-theme-primary: #37474f;
+  --mdc-theme-secondary: #26c6da;
+}
+
 @tailwind base;
 
 /* Write your own custom base styles here */
@@ -8,6 +15,7 @@
 
 html,
 body {
+  font-family: -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   @apply bg-gray-900 dark:text-white;
 }
 
@@ -174,10 +182,10 @@ nav {
   background-color: #424242;
 }
 
-a > i.material-icons,
+/*a > i.material-icons,
 button > i.material-icons {
   vertical-align: middle;
-}
+}*/
 
 /* Set min-height to avoid page reflow while session loading */
 .signedInStatus {
@@ -280,4 +288,28 @@ button > i.material-icons {
   line-height: 1.4;
   border-radius: 2px;
   background-color: rgba(255, 229, 100, 0.2);
+}
+
+button.mdc-button--outlined {
+  @apply ring-1 ring-gray-400 focus:ring-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white;
+}
+
+button.mdc-button--outlined .mdc-button__label {
+  @apply text-gray-400;
+}
+
+button.mdc-button--outlined:hover .mdc-button__label {
+  @apply text-yellow-400;
+}
+
+button.mdc-button--outlined:hover {
+  @apply ring-2 ring-yellow-400;
+}
+
+.mdc-menu-anchor {
+  @apply absolute origin-top-right right-0 pr-8 z-50;
+}
+
+.mdc-simple-menu {
+  @apply mt-2 w-64 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5;
 }
