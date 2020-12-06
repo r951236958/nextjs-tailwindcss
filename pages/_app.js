@@ -18,7 +18,7 @@ import '../styles/global.css'
 //import '../styles/index.css'
 import '../styles/tailwind.css'
 //import '../styles/material_color.css'
-import '../styles/app.scss'
+//import '../styles/app.scss'
 import '../styles/prism.css'
 //import 'material-components-web/dist/material-components-web.min.css'
 
