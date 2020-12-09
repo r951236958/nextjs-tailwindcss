@@ -1,0 +1,321 @@
+:root {
+  --color-primary: #37474f;
+  --color-secondary: #26c6da;
+  --mdc-theme-primary: #37474f;
+  --mdc-theme-secondary: #26c6da;
+}
+
+@tailwind base;
+
+/* Write your own custom base styles here */
+
+/* Start purging... */
+@tailwind components;
+/* Stop purging. */
+
+/* Start purging... */
+@tailwind utilities;
+/* Stop purging. */
+
+/* Write your own custom component styles here */
+@layer components {
+  .btn-blue {
+    @apply py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+  }
+
+  .btn-outline {
+    @apply px-3 py-2 rounded-lg border border-teal-400 text-lg leading-6 font-medium text-gray-300 hover:text-gray-100 hover:bg-gray-800 transition ease-in-out duration-150;
+  }
+
+  .btn-info {
+    @apply px-3 py-2 m-2 text-blue-100 transition-colors duration-150 bg-blue-600 rounded-lg focus:outline-white hover:bg-blue-700;
+  }
+
+  .btn-dark {
+    @apply px-3 py-2 m-2 text-gray-200 transition-colors duration-150 bg-gray-700 border border-gray-400 rounded-lg focus:outline-white hover:bg-gray-800 hover:border-gray-600 hover:text-gray-100;
+  }
+
+  .btn-info-outline {
+    @apply px-3 py-2 text-blue-100 transition-colors duration-150 border border-blue-600 rounded-lg focus:outline-black hover:bg-blue-500 hover:text-blue-100;
+  }
+
+  button.mdl-button--raised.mdl-button--colored {
+    background: #4b5563;
+    color: #efefef;
+  }
+
+  button.mdl-button--raised.mdl-button--colored:hover {
+    background: #1f2937;
+  }
+
+  button.mdl-button--primary.mdl-button--primary {
+    color: #26a69a;
+    background: #efefef;
+  }
+
+  button.mdl-button--primary.mdl-button--primary:hover {
+    color: #efefef;
+    background: #00766c;
+  }
+
+  [type='text']:focus,
+  [type='email']:focus,
+  [type='url']:focus,
+  [type='password']:focus,
+  [type='number']:focus,
+  [type='date']:focus,
+  [type='month']:focus,
+  [type='search']:focus,
+  [type='tel']:focus,
+  [type='time']:focus,
+  textarea:focus,
+  select:focus {
+    @apply ring-1 ring-gray-400 ring-opacity-50 ring-offset-2 ring-offset-gray-700;
+  }
+
+  .firebaseauth {
+    z-index: 30;
+  }
+
+  .mobileMenu {
+    z-index: 50;
+  }
+
+  /* Your own custom utilities */
+  body {
+    font-family: -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans,
+      sans-serif, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
+      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    padding: 0 1rem 1rem 1rem;
+    @apply max-w-screen-xl my-0 mx-auto;
+  }
+  .mobile-wrap {
+    width: 336px;
+    height: 720px;
+  }
+
+  li,
+  p {
+    line-height: 1.5rem;
+  }
+
+  a {
+    font-weight: 400;
+  }
+
+  hr {
+    border: 1px solid #ddd;
+  }
+
+  iframe {
+    background: #ccc;
+    border: 1px solid #ccc;
+    height: 10rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    filter: invert(1);
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  .container {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1.25rem;
+  }
+
+  header {
+    border-bottom: 1px solid #ccc;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*max-width: 42rem;*/
+    margin: 0 auto;
+    padding: 0.2rem 1.25rem;
+  }
+  .logo {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .avatar {
+    border-radius: 2rem;
+    float: left;
+    height: 2.2rem;
+    width: 2.2rem;
+    background-color: white;
+    background-size: cover;
+    border: 2px solid #ddd;
+  }
+  .email {
+    margin-right: 1rem;
+    margin-left: 0.25rem;
+    font-weight: 600;
+  }
+  .signInButton,
+  .signOutButton {
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+  .signInButton {
+    background-color: #1eb1fc;
+  }
+  .signInButton:hover {
+    background-color: #1b9fe2;
+  }
+  .signOutButton {
+    background-color: #333;
+  }
+  .signOutButton:hover {
+    background-color: #555;
+  }
+
+  .bg-bk {
+    background-color: #303030;
+  }
+
+  .bg-paper {
+    background-color: #424242;
+  }
+
+  /*a > i.material-icons,
+button > i.material-icons {
+  vertical-align: middle;
+}*/
+
+  /* Set min-height to avoid page reflow while session loading */
+  .signedInStatus {
+    display: block;
+    min-height: 4rem;
+    width: 100%;
+  }
+
+  .loading,
+  .loaded {
+    position: relative;
+    top: 0;
+    opacity: 1;
+    overflow: hidden;
+    border-radius: 0 0 0.6rem 0.6rem;
+    padding: 0.6rem 1rem;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease-in;
+  }
+
+  .loading {
+    top: -2rem;
+    opacity: 0;
+  }
+
+  .signedInText,
+  .notSignedInText {
+    position: absolute;
+    padding-top: 0.8rem;
+    left: 1rem;
+    right: 6.5rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inherit;
+    z-index: 1;
+    line-height: 1.3rem;
+  }
+
+  .signedInText {
+    padding-top: 0rem;
+    left: 4.6rem;
+  }
+
+  .avatar {
+    border-radius: 2rem;
+    float: left;
+    height: 2.8rem;
+    width: 2.8rem;
+    background-color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .button,
+  .buttonPrimary {
+    float: right;
+    margin-right: -0.4rem;
+    font-weight: 500;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1.4rem;
+    padding: 0.7rem 0.8rem;
+    position: relative;
+    z-index: 10;
+    background-color: transparent;
+    color: #555;
+  }
+
+  .buttonPrimary {
+    background-color: #346df1;
+    border-color: #346df1;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.7rem 1.4rem;
+  }
+
+  .buttonPrimary:hover {
+    box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.2);
+  }
+
+  .navItems {
+    margin-bottom: 2rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .navItem {
+    display: inline-block;
+    margin-right: 1rem;
+  }
+
+  .code {
+    display: inline-block;
+    padding: 0 3px;
+    direction: ltr;
+    font-size: 0.85em;
+    line-height: 1.4;
+    border-radius: 2px;
+    background-color: rgba(255, 229, 100, 0.2);
+  }
+
+  button.mdc-button--outlined {
+    @apply ring-1 ring-gray-400 focus:ring-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white;
+  }
+
+  button.mdc-button--outlined .mdc-button__label {
+    @apply text-gray-400;
+  }
+
+  button.mdc-button--outlined:hover .mdc-button__label {
+    @apply text-yellow-400;
+  }
+
+  button.mdc-button--outlined:hover {
+    @apply ring-2 ring-yellow-400;
+  }
+
+  .mdc-menu-anchor {
+    @apply absolute origin-top-right right-0 pr-8 z-50;
+  }
+
+  .mdc-simple-menu {
+    @apply mt-2 w-64 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5;
+  }
+}

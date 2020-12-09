@@ -1,34 +1,70 @@
 import Link from 'next/link'
-import { version } from '../package.json'
 
-export default function Footer() {
+export default function Footer(props) {
   return (
-    <footer className="mt-8 ">
-      <hr />
-      <ul className="space-x-4 px-5 py-1 my-4">
-        <li className="my-2 p-0 inline-block nav-item">
-          <a
-            className="px-3 py-2 flex items-center uppercase leading-snug text-white hover:opacity-75"
-            href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/documentation/react/navbars"
-          >
-            tailwind starter kit
-          </a>
-        </li>
-        <li className="my-2 p-0 inline-block nav-item">
-          <a href="https://www.npmjs.com/package/next-auth">NPM</a>
-        </li>
-        <li className="my-2 p-0 inline-block">
-          <a href="https://github.com/nextauthjs/next-auth-example">GitHub</a>
-        </li>
-        <li className="my-2 p-0 inline-block nav-item">
-          <Link href="/policy">
-            <a>Policy</a>
-          </Link>
-        </li>
-        <li className="my-2 p-0 inline-block">
-          <em>{version}</em>
-        </li>
-      </ul>
-    </footer>
+    <>
+      <footer
+        className={
+          (props.absolute
+            ? "absolute w-full bottom-0 bg-gray-900"
+            : "relative") + " pb-6"
+        }
+      >
+        <div className="container mx-auto px-4">
+          <hr className="mb-6 border-b-1 border-gray-700" />
+          <div className="flex flex-wrap items-center md:justify-between justify-center">
+            <div className="w-full md:w-4/12 px-4">
+              <div className="text-sm text-white font-semibold py-1">
+                Copyright © {new Date().getFullYear()}{" "}
+                <a
+                  href="https://www.creative-tim.com"
+                  className="text-white hover:text-gray-400 text-sm font-semibold py-1"
+                >
+                  Creative Tim
+                </a>
+              </div>
+            </div>
+            <div className="w-full md:w-8/12 px-4">
+              <ul className="flex flex-wrap list-none md:justify-end  justify-center">
+                <li>
+                  <a
+                    href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit"
+                    className="text-white hover:text-gray-400 text-sm font-semibold block py-1 px-3"
+                  >
+                    tailwind starter kit
+                  </a>
+                </li>
+                <li>
+                <Link href="/about">
+                  <a
+                    className="text-white hover:text-gray-400 text-sm font-semibold block py-1 px-3"
+                  >
+                    About
+                  </a>
+                  </Link>
+                </li>
+                <li>
+                  <a
+                    href="http://blog.creative-tim.com"
+                    className="text-white hover:text-gray-400 text-sm font-semibold block py-1 px-3"
+                  >
+                    Blog
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/creativetimofficial/argon-design-system/blob/master/LICENSE.md"
+                    className="text-white hover:text-gray-400 text-sm font-semibold block py-1 px-3"
+                  >
+                    MIT License
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </>
+    
   )
 }

@@ -1,34 +1,63 @@
-import React from 'react'
-import Link from 'next/link'
+import Link from 'next/link';
+import React from 'react';
 
 const links = [
   {
     primary: 'Home',
     href: '/',
+    faIcon: 'fas fa-home',
   },
   {
     primary: 'About',
     href: '/about',
+    faIcon: 'fas fa-info',
+  },
+  {
+    primary: 'Login',
+    href: '/login',
+    faIcon: 'fas fa-sign-in-alt',
+  },
+  {
+    primary: 'Mobile',
+    href: '/mobile',
+    faIcon: 'fas fa-mobile-alt',
   },
   {
     primary: 'Team',
     href: '/team',
+    faIcon: 'fas fa-user-secret',
   },
   {
     href: '/example',
     primary: 'Example',
+    faIcon: 'far fa-bookmark',
   },
 ]
 
-export default function Navbar({ fixed }) {
-  const [navbarOpen, setNavbarOpen] = React.useState(false)
+
+            
+export default function Navbar(props) {
+  const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <>
-      <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-gray-700 mb-3">
+      <nav
+        className={
+          (props.transparent
+            ? "top-0 absolute z-50 w-full"
+            : "relative shadow-lg bg-white shadow-lg") +
+          " flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg"
+        }
+      >
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-            <div className="flex items-center">
-              <div className="flex-shrink-0">
+            <a
+              className={
+                (props.transparent ? "text-white" : "text-gray-800") +
+                " text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase"
+              }
+              href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit#/presentation"
+            >
+             
                 <svg
                   className="h-8 text-lg font-semibold"
                   xmlns="http://www.w3.org/2000/svg"
@@ -41,112 +70,162 @@ export default function Navbar({ fixed }) {
                     <path d="M520.5 78.1z" />
                   </g>
                 </svg>
-              </div>
-
-              <div className="hidden md:block">
-                <div className="ml-10 flex items-baseline space-x-4">
-                  <a
-                    className="flex text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase text-white"
-                    href="/"
-                  >
-                    gray Tailwind Starter Kit
-                  </a>
-                </div>
-              </div>
-            </div>
+              
+              
+            </a>
             <button
-              className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+              className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
               type="button"
               onClick={() => setNavbarOpen(!navbarOpen)}
             >
-              <i className="material-icons">menu</i>
+              <i
+                className={
+                  (props.transparent ? "text-white" : "text-gray-800") +
+                  " material-icons"
+                }
+              >menu</i>
             </button>
           </div>
           <div
             className={
-              'lg:flex flex-grow items-center' +
-              (navbarOpen ? ' flex' : ' hidden')
+              "lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none" +
+              (navbarOpen ? " block rounded shadow-lg" : " hidden")
             }
-            id="example-navbar-danger"
+            id="example-navbar-warning"
           >
-            <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
-              {links.map(({ href, primary }) => (
-                <li className="nav-item" key={primary}>
-                  <Link href={href} >
-                    <a className="px-3 py-2 flex items-center leading-snug  rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:bg-gray-900">
-                      {primary}
-                    </a>
-                  </Link>
-                </li>
+            <ul className="flex flex-col lg:flex-row list-none mr-auto">
+            {links.map(({ href, primary, faIcon }) => (
+              <li className="flex items-center" key={primary}>
+              <Link href={href} >
+              <a
+                className={
+                  (props.transparent
+                    ? "lg:text-white lg:hover:text-gray-300 text-gray-800"
+                    : "text-gray-800 hover:text-gray-600") +
+                  " px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                }
+                href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit#/login"
+              >
+                <i
+                  className={
+                    (props.transparent
+                      ? "lg:text-gray-300 text-gray-500"
+                      : "text-gray-500") +
+                    " text-lg leading-lg mr-2 " + `${faIcon}`
+                  }
+                />{" "}
+                {primary}
+              </a>
+              </Link>
+              </li>
               ))}
-              <li className="nav-item">
+              <li className="flex items-center">
                 <a
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  href="#fb"
+                  className={
+                    (props.transparent
+                      ? "lg:text-white lg:hover:text-gray-300 text-gray-800"
+                      : "text-gray-800 hover:text-gray-600") +
+                    " px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                  }
+                  href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit#/login"
                 >
-                  <svg
-                    aria-hidden="true"
-                    data-prefix="fab"
-                    data-icon="facebook-square"
-                    className="h-4 w-4 svg-inline--fa fa-facebook-square fa-w-14 text-lg leading-lg fill-current text-white opacity-75"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 448 512"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M400 32H48A48 48 0 000 80v352a48 48 0 0048 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0048-48V80a48 48 0 00-48-48z"
-                    />
-                  </svg>
+                  <i
+                    className={
+                      (props.transparent
+                        ? "lg:text-gray-300 text-gray-500"
+                        : "text-gray-500") +
+                      " far fa-file-alt text-lg leading-lg mr-2"
+                    }
+                  />{" "}
+                  Docs
+                </a>
+              </li>
+            </ul>
+            <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
+              <li className="flex items-center">
+                <a
+                  className={
+                    (props.transparent
+                      ? "lg:text-white lg:hover:text-gray-300 text-gray-800"
+                      : "text-gray-800 hover:text-gray-600") +
+                    " px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                  }
+                  href="#pablo"
+                >
+                  <i
+                    className={
+                      (props.transparent
+                        ? "lg:text-gray-300 text-gray-500"
+                        : "text-gray-500") +
+                      " fab fa-facebook text-lg leading-lg "
+                    }
+                  />
+                  <span className="lg:hidden inline-block ml-2">Share</span>
+                </a>
+              </li>
 
-                  <span className="ml-2">Share</span>
+              <li className="flex items-center">
+                <a
+                  className={
+                    (props.transparent
+                      ? "lg:text-white lg:hover:text-gray-300 text-gray-800"
+                      : "text-gray-800 hover:text-gray-600") +
+                    " px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                  }
+                  href="#pablo"
+                >
+                  <i
+                    className={
+                      (props.transparent
+                        ? "lg:text-gray-300 text-gray-500"
+                        : "text-gray-500") +
+                      " fab fa-twitter text-lg leading-lg "
+                    }
+                  />
+                  <span className="lg:hidden inline-block ml-2">Tweet</span>
                 </a>
               </li>
-              <li className="nav-item">
+
+              <li className="flex items-center">
                 <a
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  href="#tw"
+                  className={
+                    (props.transparent
+                      ? "lg:text-white lg:hover:text-gray-300 text-gray-800"
+                      : "text-gray-800 hover:text-gray-600") +
+                    " px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                  }
+                  href="#pablo"
                 >
-                  <svg
-                    aria-hidden="true"
-                    data-prefix="fab"
-                    data-icon="twitter"
-                    className="h-4 w-4 svg-inline--fa fa-twitter fa-w-16 text-lg leading-lg text-white opacity-75"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 512 512"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
-                    />
-                  </svg>
-                  <span className="ml-2">Tweet</span>
+                  <i
+                    className={
+                      (props.transparent
+                        ? "lg:text-gray-300 text-gray-500"
+                        : "text-gray-500") +
+                      " fab fa-github text-lg leading-lg "
+                    }
+                  />
+                  <span className="lg:hidden inline-block ml-2">Star</span>
                 </a>
               </li>
-              <li className="nav-item">
-                <a
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  href="#pinterest"
+
+              <li className="flex items-center">
+                <button
+                  className={
+                    (props.transparent
+                      ? "bg-white text-gray-800 active:bg-gray-100"
+                      : "bg-pink-500 text-white active:bg-pink-600") +
+                    " text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3"
+                  }
+                  type="button"
+                  style={{ transition: "all .15s ease" }}
                 >
-                  <svg
-                    aria-hidden="true"
-                    data-prefix="fab"
-                    data-icon="pinterest"
-                    className="h-4 w-4 svg-inline--fa fa-pinterest fa-w-16 text-lg leading-lg text-white opacity-75"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 496 512"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 51.6-.9 71.2C65.4 450.9 0 361.1 0 256 0 119 111 8 248 8s248 111 248 248z"
-                    />
-                  </svg>
-                  <span className="ml-2">Pin</span>
-                </a>
+                  <i className="fas fa-arrow-alt-circle-down"></i> Download
+                </button>
               </li>
             </ul>
           </div>
         </div>
       </nav>
     </>
-  )
+  );
 }

@@ -3,6 +3,7 @@ import Layout from '../components/layout'
 
 export const Team = () => (
   <Layout>
+  <div className="w-full px-4">
     <div className="py-10">
       <h1 className="text-5xl text-center text-gray-700 dark:text-gray-100">
         Terms of Service
@@ -136,6 +137,7 @@ export const Team = () => (
           and cancel orders in their sole discretion.
         </p>
       </div>
+    </div>
     </div>
   </Layout>
 )

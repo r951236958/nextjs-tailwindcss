@@ -1,6 +1,6 @@
-import Layout from '../components/layout'
-import Hero from '../components/Hero'
 import Prism from 'prismjs'
+import Hero from '../components/Hero'
+import Layout from '../components/layout'
 
 // The code snippet you want to highlight, as a string
 //const code = `var data = 1;`;
@@ -51,13 +51,14 @@ export default function about() {
 
   return (
     <Layout>
+    <div className="relative w-full px-4">
       <div className="py-10">
-        <h1 className="text-5xl text-center text-gray-700 dark:text-gray-100">
+        <h1 className="text-5xl text-center text-white">
           About Page
         </h1>
       </div>
       <Hero />
-      <div className="my-6 rounded-xl overflow-hidden bg-gray-800">
+      <div className="my-6 rounded-xl overflow-hidden">
         <pre>
           <code className="language-shell">{npminstallCode}</code>
         </pre>
@@ -68,6 +69,7 @@ export default function about() {
             <code className="language-html">{htmlCode}</code>
           </pre>
         </div>
+      </div>
       </div>
     </Layout>
   )

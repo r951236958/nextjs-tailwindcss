@@ -1,7 +1,7 @@
-import React from 'react'
-import Layout from '../components/layout'
-import useSWR from 'swr'
 import Link from 'next/link'
+import React from 'react'
+import useSWR from 'swr'
+import Layout from '../components/layout'
 import { useUser } from '../utils/auth/useUser'
 
 const fetcher = (url, token) =>
@@ -20,19 +20,29 @@ export default function Index() {
   if (!user) {
     return (
       <Layout>
-        <h1 className="text-white text-3xl">Hi there!</h1>
-        <p className="text-white my-4">
-          You are not signed in.{' '}
-          <Link href={'/auth'}>
-            <a className="btn-outline">Sign in</a>
+      <div className="flex content-center justify-center h-full">
+          <div className="w-full lg:w-4/12 px-4">
+        <div className="relative w-full px-4">
+     
+          <div className="py-10">
+            <h1 className="text-white text-3xl">Hi there!</h1>
+          </div>
+          <p className="text-white my-4">You are not signed in. </p>
+          <Link href={'/login'}>
+            <a className="text-center rounded-lg border border-teal-400 px-3 py-2 text-lg leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">Sign in</a>
           </Link>
-        </p>
+          
+        </div>
+        </div>
+        </div>
       </Layout>
     )
   }
   return (
     <Layout>
-      <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+    <div className="flex content-center items-center justify-center h-full">
+          <div className="w-full lg:w-4/12 px-4">
+      <div className="relative w-full px-4">
         <div className="my-4 mx-auto h-96">
           <div className="py-10">
             <h1 className="text-white text-3xl">
@@ -57,7 +67,7 @@ export default function Index() {
               You're signed in. Email: {user.email}
             </p>
             <div className="flex items-end max-w-xs xs:ml-auto xs:max-w-xs ">
-              <a className="btn-outline" onClick={() => logout()}>
+              <a className="text-center rounded-lg border border-teal-400 px-3 py-2 text-lg leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150" onClick={() => logout()}>
                 Log out
               </a>
             </div>
@@ -84,11 +94,13 @@ export default function Index() {
             )}
             <div className="flex items-end max-w-xs xs:ml-auto xs:max-w-xs">
               <Link href={'/example'}>
-                <a className="btn-outline">Another example page</a>
+                <a className="text-center rounded-lg border border-teal-400 px-3 py-2 text-lg leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">Another example page</a>
               </Link>
             </div>
           </div>
         </div>
+      </div>
+      </div>
       </div>
     </Layout>
   )

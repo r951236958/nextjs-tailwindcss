@@ -14,7 +14,7 @@ const Example = (props) => {
         authed user info.
       </p>
       <Link href={'/'}>
-        <a className="btn-dark">Home</a>
+        <a className="text-center rounded-lg border border-teal-400 px-3 py-2 text-lg leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">Home</a>
       </Link>
     </Layout>
   )
