@@ -1,5 +1,4 @@
 import Prism from 'prismjs'
-import Hero from '../components/Hero'
 import Layout from '../components/layout'
 
 // The code snippet you want to highlight, as a string
@@ -44,7 +43,7 @@ a:hover {
 \`\`\`
 `
 
-export default function about() {
+export default function Code() {
   React.useEffect(() => {
     Prism.highlightAll()
   }, [])
@@ -55,14 +54,24 @@ export default function about() {
         <div className="py-10">
           <h1 className="text-5xl text-center text-white">About Page</h1>
         </div>
-        <div className="bg-gray-900">
+
           <div className="max-w-8xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-            <Hero />
             
-           
+            <div className="my-6 rounded-xl overflow-hidden">
+              <pre>
+                <code className="language-shell">{npminstallCode}</code>
+              </pre>
+            </div>
+            <div className="my-10">
+              <div className="mx-auto py-16 px-4">
+                <pre>
+                  <code className="language-html">{htmlCode}</code>
+                </pre>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+
     </Layout>
   )
 }

@@ -32,6 +32,16 @@ const links = [
     primary: 'Example',
     faIcon: 'far fa-bookmark',
   },
+  {
+    href: '/landing',
+    primary: 'Landing',
+    faIcon: 'fas fa-columns',
+  },
+  {
+    href: '/code',
+    primary: 'Code',
+    faIcon: 'fas fa-code',
+  },
 ]
 
 
