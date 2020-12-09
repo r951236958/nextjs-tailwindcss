@@ -1,5 +1,5 @@
 //import { Provider } from 'next-auth/client'
-import Head from 'next/head'
+//import Head from 'next/head'
 //import * as firebaseui from 'firebaseui'
 //import 'firebaseui/dist/firebaseui.css'
 import Prism from 'prismjs'
@@ -13,7 +13,7 @@ import 'prismjs/themes/prism-okaidia.css'
 //import App from 'next/App'
 import PropTypes from 'prop-types'
 import React from 'react'
-import 'tailwindcss/tailwind.css'
+//import 'tailwindcss/tailwind.css'
 import '../styles/global.css'
 //import '../styles/index.css'
 import '../styles/tailwind.css'
@@ -31,26 +31,6 @@ function MyApp(props) {
 
   return (
     <React.Fragment>
-      <Head>
-        <title>My page</title>
-        <meta name="theme-color" content="#37474f" />
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width"
-        />
-        <link
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet"
-        />
-        <link
-          href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
-          rel="stylesheet"
-        />
-
-        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-        <script src="prism.js"></script>
-      </Head>
-
       <Component {...pageProps} />
     </React.Fragment>
   )

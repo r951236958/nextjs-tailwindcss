@@ -1,10 +1,11 @@
-import FirebaseAuth from '../components/FirebaseAuth'
+import React from 'react'
 import Layout from '../components/layout'
+import FirebaseAuth from '../components/FirebaseAuth'
 
-const Auth = () => {
-  return (
-    <Layout>
-      <div className="flex content-center items-center justify-center h-full">
+export const Login = () => (
+  <Layout>
+    <div className="pt-16 pb-32">
+      <div className="flex py-10 content-center items-center justify-center h-full">
         <div className="w-full lg:w-4/12 px-4">
           <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300 border-0">
             <div className="rounded-t mb-0 px-6 py-6">
@@ -124,8 +125,8 @@ const Auth = () => {
           </div>
         </div>
       </div>
-    </Layout>
-  )
-}
+    </div>
+  </Layout>
+)
 
-export default Auth
+export default Login

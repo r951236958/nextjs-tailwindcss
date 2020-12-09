@@ -1,4 +1,5 @@
-//import Head from 'next/head'
+import Head from 'next/head'
+import Image from 'next/image'
 import Footer from './footer'
 //import Simple from './simple'
 //import Hero from './Hero'
@@ -10,16 +11,44 @@ import Navbar from './navbar'
 
 const Layout = ({ children }) => (
   <>
-    <div className="rounded-md bg-paper bg-opacity-20">
-      <Navbar />
+    <Head>
+      <title>Next.js App</title>
+      <meta name="theme-color" content="#37474f" />
+      <meta
+        name="viewport"
+        content="minimum-scale=1, initial-scale=1, width=device-width"
+      />
+      <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet"
+      />
+      <link
+        href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+        rel="stylesheet"
+      />
 
-      <main className="md:container md:mx-auto p-4 mx-4 border-2 border-dashed border-gray-300 border-opacity-20 rounded-lg">
-        <div className="max-w-8xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-          {children}
+      <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+      <script src="prism.js"></script>
+    </Head>
+    <Navbar transparent />
+    <main>
+      <section className="absolute w-full h-full">
+        <div
+          className="absolute top-0 w-full h-full bg-gray-900"
+          style={{
+            backgroundImage: 'url(' + 'assets/img/register_bg_2.png' + ')',
+            backgroundSize: '100%',
+            backgroundRepeat: 'no-repeat',
+          }}
+        ></div>
+        <div className="container mx-auto px-4 h-full">
+          <div className="w-full content-center items-center justify-center h-full px-4">
+            {children}
+          </div>
         </div>
-      </main>
-      <Footer />
-    </div>
+        <Footer />
+      </section>
+    </main>
   </>
 )
 

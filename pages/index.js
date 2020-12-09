@@ -20,20 +20,26 @@ export default function Index() {
   if (!user) {
     return (
       <Layout>
-        <h1 className="text-white text-3xl">Hi there!</h1>
-        <p className="text-white my-4">
-          You are not signed in.{' '}
-          <Link href={'/auth'}>
-            <a className="btn-outline">Sign in</a>
-          </Link>
-        </p>
+        <div className="relative pt-16 pb-32 flex content-center items-center justify-center">
+          <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
+            <div className="py-10">
+              <h1 className="text-5xl text-center text-gray-700 dark:text-gray-100">
+                Hi there!
+              </h1>
+            </div>
+            <p className="text-white my-4">You are not signed in. </p>
+            <Link href={'/login'}>
+              <a className="btn-outline">Sign in</a>
+            </Link>
+          </div>
+        </div>
       </Layout>
     )
   }
   return (
     <Layout>
-      <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-        <div className="my-4 mx-auto h-96">
+      <div className="relative max-w-7xl mx-auto pt-16 pb-32 sm:px-6 lg:px-8">
+        <div className="w-full lg:w-6/12 ml-auto mr-auto mx-auto px-4 h-96">
           <div className="py-10">
             <h1 className="text-white text-3xl">
               Firebase authentication with a serverless API

@@ -1,77 +1,95 @@
-//import Nav from '../components/nav'
-import Link from 'next/link'
-import Button from '../components/Button'
-import Hero from '../components/Hero'
+import React from 'react'
 import Layout from '../components/layout'
+import useSWR from 'swr'
+import Link from 'next/link'
+import { useUser } from '../utils/auth/useUser'
 
-const links = [
-  {
-    home: {
-      href: '/',
-      primary: 'Home',
-    },
-  },
-  {
-    about: {
-      href: '/about',
-      primary: 'About',
-    },
-  },
-]
+const fetcher = (url, token) =>
+  fetch(url, {
+    method: 'GET',
+    headers: new Headers({ 'Content-Type': 'application/json', token }),
+    credentials: 'same-origin',
+  }).then((res) => res.json())
 
-export default function Home() {
+export default function Index() {
+  const { user, logout } = useUser()
+  const { data, error } = useSWR(
+    user ? ['/api/getFood', user.token] : null,
+    fetcher
+  )
+  if (!user) {
+    return (
+      <Layout>
+        <h1 className="text-white text-3xl">Hi there!</h1>
+        <p className="text-white my-4">
+          You are not signed in.{' '}
+          <Link href={'/auth'}>
+            <a className="btn-outline">Sign in</a>
+          </Link>
+        </p>
+      </Layout>
+    )
+  }
   return (
     <Layout>
-      <div className="py-10">
-        <h1 className="text-5xl text-center text-gray-700 dark:text-gray-100">
-          Next.js + Tailwind CSS 2.0
-        </h1>
-      </div>
-      <div className="my-10">
-        <div className="my-10">
-          <div className="my-6 rounded-xl text-center">
-            <div className="max-w-xs xs:ml-auto xs:max-w-xs">
-              <Link href="/about">
-                <a className="text-center rounded-lg border border-teal-400 px-3 py-2 text-lg leading-6 font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150">
-                  About
-                </a>
+      <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <div className="my-4 mx-auto h-96">
+          <div className="py-10">
+            <h1 className="text-white text-3xl">
+              Firebase authentication with a serverless API
+            </h1>
+          </div>
+          <p className="text-white my-4">
+            Go to{' '}
+            <a
+              className="text-gold hover:text-yellow-200 hover:underline text-xl"
+              href={`https://github.com/vercel/next.js/tree/canary/examples/with-firebase-authentication`}
+            >
+              Example
+            </a>{' '}
+            how to use.
+          </p>
+        </div>
+
+        <div>
+          <div className="my-4">
+            <p className="flex items-start text-white my-4">
+              You're signed in. Email: {user.email}
+            </p>
+            <div className="flex items-end max-w-xs xs:ml-auto xs:max-w-xs ">
+              <a className="btn-outline" onClick={() => logout()}>
+                Log out
+              </a>
+            </div>
+          </div>
+          <div className="my-4">
+            {error && (
+              <p className="flex items-start text-white my-4">
+                Failed to fetch food!
+              </p>
+            )}
+            {data && !error ? (
+              <div className="flex items-start my-4">
+                {' '}
+                <p className="text-white">
+                  Your favorite food is{' '}
+                  <span className="uppercase font-extrabold font-xl text-secondart bg-gray-100 bg-opacity-20 m-2 px-2 rounded">
+                    {data.food}
+                  </span>
+                  .
+                </p>
+              </div>
+            ) : (
+              <div>Loading...</div>
+            )}
+            <div className="flex items-end max-w-xs xs:ml-auto xs:max-w-xs">
+              <Link href={'/example'}>
+                <a className="btn-outline">Another example page</a>
               </Link>
             </div>
           </div>
-          <div className="m-5 text-center">
-            <Button href="/" primary="Home" />
-          </div>
-        </div>
-        <div className="mdc-component mdc-component__buttons mt-10">
-          <p>Buttons</p>
-
-          <div className="mdc-component__containers">
-            <div className="mdc-component__containers__primary">
-              <button className="mdc-button mdc-button--raised">
-                <div className="mdc-button__ripple"></div>
-                <span className="mdc-button__label">Button</span>
-              </button>
-              <button className="mdc-fab material-icons" aria-label="Add">
-                <span className="mdc-fab__icon">add</span>
-              </button>
-              <button
-                id="add-to-favorites"
-                className="mdc-icon-button"
-                aria-label="Add to favorites"
-                aria-pressed="false"
-              >
-                <i className="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">
-                  favorite
-                </i>
-                <i className="material-icons mdc-icon-button__icon">
-                  favorite_border
-                </i>
-              </button>
-            </div>
-          </div>
         </div>
       </div>
-      <Hero />
     </Layout>
   )
 }

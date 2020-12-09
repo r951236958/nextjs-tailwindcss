@@ -1,21 +1,22 @@
-import { useSession } from 'next-auth/client';
-import Layout from '../components/layout';
+import { useSession } from 'next-auth/client'
+import Layout from '../components/layout'
 
 const Profile = () => {
-  const [session, loading] = useSession();
+  const [session, loading] = useSession()
 
-  if (loading) return <div>loading...</div>;
-  if (!session) return <div>no session</div>;
+  if (loading) return <div>loading...</div>
+  if (!session) return <div>no session</div>
 
   return (
     <Layout>
-      {session && (
-        <>
-          <img src={session.user.image} className="avatar" />
-          <h1>{session.user.name}</h1>
-        </>
-      )}
-
+      <div className="relative pt-16 pb-32 flex content-center items-center justify-center">
+        {session && (
+          <>
+            <img src={session.user.image} className="avatar" />
+            <h1>{session.user.name}</h1>
+          </>
+        )}
+      </div>
       <style jsx>{`
         .avatar {
           width: 220px;
@@ -23,7 +24,7 @@ const Profile = () => {
         }
       `}</style>
     </Layout>
-  );
-};
+  )
+}
 
-export default Profile;
+export default Profile
