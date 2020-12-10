@@ -1,20 +1,10 @@
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 import React from 'react'
 import useSWR from 'swr'
 import Layout from '../components/layout'
 import { useUser } from '../utils/auth/useUser'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-	faHome,
-	faInfo,
-	faColumns,
-	faCode,
-	faSignInAlt,
-	faMobileAlt,
-	faUserSecret,
-} from '@fortawesome/free-solid-svg-icons'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faBookmark } from '@fortawesome/free-regular-svg-icons'
 
 const fetcher = (url, token) =>
 	fetch(url, {
@@ -44,7 +34,7 @@ export default function Index() {
 									<a className="btn-teal-outline">Sign in</a>
 								</Link>
 								<p className="text-white my-4">
-									<button class="btn-teal-outline flex">
+									<button className="btn-teal-outline flex">
 										<FontAwesomeIcon
 											icon={faGithub}
 											className="h-6 inline-block mr-2 justify-center "

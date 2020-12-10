@@ -1,7 +1,8 @@
+import Image from 'next/image'
 import Prism from 'prismjs'
+import React from 'react'
 import Hero from '../components/Hero'
 import Layout from '../components/layout'
-
 // The code snippet you want to highlight, as a string
 //const code = `var data = 1;`;
 
@@ -54,6 +55,8 @@ export default function about() {
       <div className="relative w-full px-4">
         <div className="py-10">
           <h1 className="text-5xl text-center text-white">About Page</h1>
+          <Image className="absolute fill-current" width="36" height="36" src="/brightness-4.svg" />
+          
         </div>
         <div className="bg-gray-900">
           <div className="max-w-8xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
