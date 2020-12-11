@@ -1,8 +1,8 @@
 //import Nav from '../components/nav'
+import Button from '@src/components/Button'
+import Hero from '@src/components/Hero'
+import Layout from '@src/components/layout'
 import Link from 'next/link'
-import Button from '../components/Button'
-import Hero from '../components/Hero'
-import Layout from '../components/layout'
 
 const links = [
   {

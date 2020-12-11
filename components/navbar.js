@@ -7,11 +7,11 @@
 //  faMobileAlt,
 //  faUserSecret,
 //} from '@fortawesome/free-solid-svg-icons'
+import { ThemeContext } from '@src/context/themeContext'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import DarkModeToggle from 'react-dark-mode-toggle'
-import { ThemeContext } from '../src/context/themeContext'
 
 const links = [
 	{
@@ -81,7 +81,7 @@ export default function Navbar(props) {
 								(props.transparent ? 'text-white' : 'text-gray-800') +
 								' text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase'
 							}
-							href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit#/presentation"
+							href="/"
 						>
 							<svg
 								className="h-8 text-lg font-semibold"
@@ -182,12 +182,15 @@ export default function Navbar(props) {
 										className={
 											(props.transparent
 												? 'lg:text-gray-300 text-gray-500'
-												: 'text-gray-500') +
-											'  text-lg leading-lg '
+												: 'text-gray-500') + '  text-lg leading-lg '
 										}
 									/>
-                  <Image className="inline-block ml-2 lg:hidden fill-current" width="18" height="18" src="/brightness-4.svg" />
-									
+									<Image
+										className="inline-block ml-2 fill-current lg:hidden"
+										width="18"
+										height="18"
+										src="/brightness-4.svg"
+									/>
 								</a>
 							</li>
 							<li className="flex items-center">
@@ -200,24 +203,28 @@ export default function Navbar(props) {
 									}
 									href="#sun"
 								>
-									
-									<Image className={
+									<Image
+										className={
 											(props.transparent
 												? 'lg:text-gray-300 text-gray-500'
-												: 'text-gray-500') +
-											' absolute text-lg leading-lg '
-										} width="18" height="18" src="/SunIcon.svg" />
-                  
+												: 'text-gray-500') + ' absolute text-lg leading-lg '
+										}
+										width="18"
+										height="18"
+										src="/SunIcon.svg"
+									/>
 								</a>
 							</li>
 
 							<li className="flex items-center">
-								<i className={
+								<i
+									className={
 										(props.transparent
 											? 'lg:text-white lg:hover:text-gray-300 text-gray-800'
 											: 'text-gray-800 hover:text-gray-600') +
 										' px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold'
-									}>
+									}
+								>
 									<DarkModeToggle
 										onChange={setIsDarkMode}
 										checked={isDarkMode}
@@ -226,34 +233,39 @@ export default function Navbar(props) {
 								</i>
 							</li>
 
-							
-
 							<li className="flex items-center">
 								<button
 									onClick={() => toggleTheme(setTheme)}
 									className={
 										(props.transparent
-											? 'bg-white text-gray-800 active:bg-gray-100'
+											? ' text-gray-800 active:bg-gray-100'
 											: 'bg-pink-500 text-white active:bg-pink-600') +
 										' text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3'
 									}
 									aria-label="Toggle theme"
 								>
 									{theme == 'dark' ? (
-										<Image className={
-											(props.transparent
-												? 'lg:text-gray-300 text-gray-500'
-												: 'text-gray-500') +
-											' absolute text-lg leading-lg '
-										} width="18" height="18" src="/brightness-2.svg" />
-											
+										<Image
+											className={
+												(props.transparent
+													? 'lg:text-gray-300 text-gray-500'
+													: 'text-gray-500') + ' absolute text-lg leading-lg '
+											}
+											width="18"
+											height="18"
+											src="/brightness-2.svg"
+										/>
 									) : (
-										<Image className={
-											(props.transparent
-												? 'lg:text-gray-300 text-gray-500'
-												: 'text-gray-500') +
-											' absolute text-lg leading-lg '
-										} width="18" height="18" src="/brightness-4.svg" />
+										<Image
+											className={
+												(props.transparent
+													? 'lg:text-gray-300 text-gray-500'
+													: 'text-gray-500') + ' absolute text-lg leading-lg '
+											}
+											width="18"
+											height="18"
+											src="/brightness-4.svg"
+										/>
 									)}
 								</button>
 							</li>

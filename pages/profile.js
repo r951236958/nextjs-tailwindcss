@@ -1,5 +1,5 @@
-import { useSession } from 'next-auth/client';
-import Layout from '../components/layout';
+import Layout from '@src/components/layout'
+import { useSession } from 'next-auth/client'
 
 const Profile = () => {
   const [session, loading] = useSession();

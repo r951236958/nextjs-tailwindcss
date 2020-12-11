@@ -1,5 +1,5 @@
-import FirebaseAuth from '../components/FirebaseAuth'
-import Layout from '../components/layout'
+import FirebaseAuth from '@components/FirebaseAuth'
+import Layout from '@components/layout'
 
 const Auth = () => {
   return (

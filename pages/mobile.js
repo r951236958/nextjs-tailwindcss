@@ -1,17 +1,5 @@
+import Layout from '@components/layout'
 import React from 'react'
-import Layout from '../components/layout'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-	faHome,
-	faInfo,
-	faColumns,
-	faCode,
-	faSignInAlt,
-	faMobileAlt,
-	faUserSecret,
-} from '@fortawesome/free-solid-svg-icons'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faBookmark } from '@fortawesome/free-regular-svg-icons'
 
 const links = [
 	{

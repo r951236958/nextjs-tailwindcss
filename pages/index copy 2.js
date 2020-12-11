@@ -1,7 +1,7 @@
-import Layout from '../components/layout'
-import useSWR from 'swr'
+import Layout from '@components/layout'
+import { useUser } from '@utils/auth/useUser'
 import Link from 'next/link'
-import { useUser } from '../utils/auth/useUser'
+import useSWR from 'swr'
 
 const fetcher = (url, token) =>
   fetch(url, {

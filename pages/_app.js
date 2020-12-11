@@ -11,7 +11,7 @@ import '../styles/prism.css'
 import '../styles/tailwind.css'
 
 
-function App(props) {
+function MyApp(props) {
   const { Component, pageProps } = props
 
   React.useEffect(() => {
@@ -25,4 +25,4 @@ function App(props) {
   )
 }
 
-export default App
+export default MyApp

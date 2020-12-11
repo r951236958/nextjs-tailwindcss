@@ -4,8 +4,8 @@
 //import Hero from '../components/Hero'
 //import TopBar from '../components/TopBar'
 //import SideBar from '../components/SideBar'
+import MobileNavigation from '@components/MobileNavigation'
 import { signIn, signOut, useSession } from 'next-auth/client'
-import MobileNavigation from '../components/MobileNavigation'
 
 const links = [
   {

@@ -1,14 +1,14 @@
-import Head from 'next/head'
-import React from 'react'
 //import Menu from './menu'
-import { ThemeProvider } from '../src/context/themeContext'
-import Footer from './footer'
+import Footer from '@components/footer'
 //import Simple from './simple'
 //import Hero from './Hero'
 //import Header from './header'
 //import TopBar from './TopBar'
 //import Nav from './nav'
-import Navbar from './navbar'
+import Navbar from '@components/navbar'
+import { ThemeProvider } from '@src/context/themeContext'
+import Head from 'next/head'
+import React from 'react'
 
 const Layout = ({ children }) => (
   <ThemeProvider>

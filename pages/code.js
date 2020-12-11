@@ -1,5 +1,5 @@
+import Layout from '@components/layout'
 import Prism from 'prismjs'
-import Layout from '../components/layout'
 
 // The code snippet you want to highlight, as a string
 //const code = `var data = 1;`;
@@ -16,7 +16,7 @@ export const CodeZone = () => (
   </div>
 )
 
-const htmlCode = `<pre><code class="language-pug" data-dependencies="less">
+const htmlCode = `<pre><code className="language-pug" data-dependencies="less">
 :less
 	foo {
 		color: @red;

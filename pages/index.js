@@ -1,10 +1,10 @@
+import Layout from '@components/layout'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useUser } from '@utils/auth/useUser'
 import Link from 'next/link'
 import React from 'react'
 import useSWR from 'swr'
-import Layout from '../components/layout'
-import { useUser } from '../utils/auth/useUser'
 
 const fetcher = (url, token) =>
 	fetch(url, {

@@ -1,9 +1,12 @@
+//import initFirebase from '../../utils/auth/initFirebase'
+import initFirebase from '@utils/auth/initFirebase'
+import { mapUserData } from '@utils/auth/mapUserData'
+import { setUserCookie } from '@utils/auth/userCookies'
 import firebase from 'firebase/app'
 import 'firebase/auth'
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
-import initFirebase from '../utils/auth/initFirebase'
-import { mapUserData } from '../utils/auth/mapUserData'
-import { setUserCookie } from '../utils/auth/userCookies'
+//import { mapUserData } from '../../utils/auth/mapUserData'
+//import { setUserCookie } from '../../utils/auth/userCookies'
 
 // Init the Firebase app.
 initFirebase()
