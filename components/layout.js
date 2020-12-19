@@ -5,13 +5,26 @@ import Footer from '@components/footer'
 //import Header from './header'
 //import TopBar from './TopBar'
 //import Nav from './nav'
-import Navbar from '@components/navbar'
-import { ThemeProvider } from '@src/context/themeContext'
+import Fab from '@material-ui/core/Fab';
+import Navbar2 from '@components/navbar2'
+import Icons from '@components/icons'
+//import { ThemeProvider } from '@src/context/themeContext'
 import Head from 'next/head'
-import React from 'react'
+import React, { useRef } from 'react'
+import PropTypes from 'prop-types'
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import Zoom from '@material-ui/core/Zoom';
 
-const Layout = ({ children }) => (
-  <ThemeProvider>
+const scrollToRef = ref => window.scrollTo(0, ref.current.offsetTop)
+
+const Layout = ({children}) => {
+  const trigger = useScrollTrigger();
+  const myRef = useRef(null)
+  const executeScroll = () => scrollToRef(myRef)
+  
+  
+  return (
+  <>
     <Head>
       <title>My page</title>
       <link rel="icon" href="/favicon.ico" />
@@ -38,18 +51,31 @@ const Layout = ({ children }) => (
       <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
       <script src="/prism.js"></script>
     </Head>
-    <Navbar transparent />
-
+    <div
+        className="bg-white dark:bg-gray-800 dark:text-gray-100 bg-contain bg-center bg-fixed bg-no-repeat"
+        style={{backgroundImage: 'url(assets/img/register_bg_2.png)'}}>
+    <div ref={myRef} />
+    <Navbar2 />
+    <div className="container min-h-screen pt-20">
     <main>
-      <section className="absolute w-full h-full">
-        <div
-          className="absolute top-0 w-full h-full bg-gray-900 bg-scroll bg-cover bg-no-repeat"
-          style={{backgroundImage: 'url(assets/img/register_bg_2.png)'}}></div>
-        <div className="container mx-auto py-16 px-4 h-full">{children}</div>
-      </section>
+      {children}
     </main>
-    <Footer absolute />
-    </ThemeProvider>
+    </div>
+      
+    <div className="fixed right-10 bottom-10">
+    <Zoom in={trigger}>
+      <Fab onClick={executeScroll} color="secondary" size="small" aria-label="scroll back to top">
+          <Icons icon="keyboard_arrow_up" />
+        </Fab>
+        </Zoom>
+        </div>
+        <Footer absolute />
+    </div>
+    </>
 )
+  }
+Layout.propTypes = {
+	children: PropTypes.node.isRequired,
+}
 
 export default Layout

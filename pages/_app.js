@@ -8,7 +8,20 @@ import 'prismjs/plugins/toolbar/prism-toolbar.css'
 import 'prismjs/themes/prism-okaidia.css'
 import React from 'react'
 import '../styles/prism.css'
-import '../styles/tailwind.css'
+import '../styles/global.css'
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+
+const theme = createMuiTheme({
+	palette: {
+		primary: {
+			main: '#ffeb3b',
+		},
+		secondary: {
+			main: '#d81b60',
+		},
+	},
+})
+
 
 
 function MyApp(props) {
@@ -20,7 +33,9 @@ function MyApp(props) {
 
   return (
     <React.Fragment>
-      <Component {...pageProps} />
+		<ThemeProvider theme={theme}>
+      		<Component {...pageProps} />
+	  	</ThemeProvider>
     </React.Fragment>
   )
 }

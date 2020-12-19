@@ -22,7 +22,7 @@ function useUser() {
       .signOut()
       .then(() => {
         // Sign-out successful.
-        router.push('/auth')
+        router.push('/login')
       })
       .catch((e) => {
         console.error(e)
