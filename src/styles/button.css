@@ -1,0 +1,27 @@
+.btn {
+	@apply mr-4 px-4 py-2 font-bold rounded;
+}
+.btn-primary {
+	@apply text-white bg-blue-500 hover:bg-blue-700;
+}
+.btn-secondary {
+	@apply text-gray-700 hover:bg-gray-700 border border-gray-300;
+}
+.btn-xs {
+	@apply text-xs;
+}
+.btn-xl {
+	@apply text-xl;
+}
+.btn-teal {
+	@apply px-4 py-2 hover:text-gray-700 text-gray-900 text-lg font-medium leading-6 bg-teal-400 hover:bg-teal-500 rounded-lg transition duration-150 ease-in-out;
+}
+.btn-teal-outline {
+	@apply px-4 py-2 hover:text-gray-100 text-gray-200 text-lg font-medium leading-6 hover:bg-teal-100 hover:bg-opacity-5 border-2 hover:border-teal-400 border-teal-500 rounded-lg transition duration-150 ease-in-out;
+}
+.btn-yellow {
+	@apply px-4 py-2 hover:text-gray-700 text-gray-900 text-lg font-medium leading-6 bg-yellow-400 hover:bg-yellow-500 rounded-lg transition duration-150 ease-in-out;
+}
+.btn-yellow-outline {
+	@apply px-4 py-2 hover:text-gray-100 text-gray-200 text-lg font-medium leading-6 hover:bg-yellow-100 hover:bg-opacity-10 border-2 border-yellow-400 hover:border-yellow-400 rounded-lg transition duration-150 ease-in-out;
+}
